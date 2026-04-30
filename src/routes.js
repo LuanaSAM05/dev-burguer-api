@@ -13,15 +13,9 @@ import CreatePaymentIntentController from "./app/controllers/stripe/CreatePaymen
 const routes = new Router();
 const uploads = multer(multerConfig);
 
-//
-// 🔥 ROTAS PÚBLICAS (SEM AUTENTICAÇÃO)
-//
 routes.post("/users", UserController.store);
 routes.post("/sessions", SessionController.store);
 
-//
-// 🔥 IMPORTANTE: não deixar auth bloquear CORS/preflight
-//
 routes.use((req, res, next) => {
   if (req.method === "OPTIONS") {
     return res.sendStatus(204);
@@ -29,27 +23,20 @@ routes.use((req, res, next) => {
   next();
 });
 
-//
-// 🔥 ROTAS PROTEGIDAS
-//
 routes.use(authMiddleware);
 
-// PRODUCTS
 routes.post("/products", adminMiddleware, uploads.single("file"), ProductController.store);
 routes.put("/products/:id", adminMiddleware, uploads.single("file"), ProductController.update);
 routes.get("/products", ProductController.index);
 
-// CATEGORIES
 routes.post("/categories", adminMiddleware, uploads.single("file"), CategoryController.store);
 routes.put("/categories/:id", adminMiddleware, uploads.single("file"), CategoryController.update);
 routes.get("/categories", CategoryController.index);
 
-// ORDERS
 routes.post("/orders", OrderController.store);
 routes.get("/orders", OrderController.index);
 routes.put("/orders/:id", adminMiddleware, OrderController.update);
 
-// PAYMENT
 routes.post("/create-payment-intent", CreatePaymentIntentController.store);
 
 export default routes;
