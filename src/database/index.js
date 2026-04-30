@@ -16,12 +16,12 @@ class Database {
   init() {
     this.connection = new Sequelize(databaseConfig);
 
-    // Inicializa cada model
+    // Inicializa os models
     models.forEach((model) => {
-      model.init(this.connection); // inicializa
+      model.init(this.connection);
     });
 
-    // Cria as associações, se existirem
+    // Associações
     models.forEach((model) => {
       if (typeof model.associate === "function") {
         model.associate(this.connection.models);
@@ -31,7 +31,7 @@ class Database {
 
   mongo() {
     this.mongooseConnection = mongoose.connect(
-      'mongodb://localhost:27017/devburguer'
+      process.env.MONGO_URI
     );
   }
 }
