@@ -1,18 +1,20 @@
+require('dotenv').config();
+
 module.exports = {
+  use_env_variable: 'DATABASE_URL',
+
   dialect: 'postgres',
-
-  url: process.env.DATABASE_URL,
-
-  define: {
-    timestamps: true,
-    underscored: true,
-    underscoredAll: true,
-  },
 
   dialectOptions: {
     ssl: {
       require: true,
       rejectUnauthorized: false,
     },
+  },
+
+  define: {
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
   },
 };

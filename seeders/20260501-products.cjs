@@ -1,0 +1,178 @@
+module.exports = {
+  async up(queryInterface) {
+    await queryInterface.bulkInsert('products', [
+      {
+        name: "Saladas",
+        price: 2590,
+        category_id: 1,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_1.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Bruschettas",
+        price: 3590,
+        category_id: 1,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_2.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Carpaccios",
+        price: 3990,
+        category_id: 1,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_3.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Ceviches",
+        price: 4500,
+        category_id: 1,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_4.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Tábua de Queijos e Frios",
+        price: 6990,
+        category_id: 1,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_5.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Croquetes",
+        price: 2390,
+        category_id: 1,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_6.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Pastéis",
+        price: 3590,
+        category_id: 1,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_7.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Tartines",
+        price: 2590,
+        category_id: 1,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_8.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Bolinhos de Bacalhau",
+        price: 4590,
+        category_id: 1,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/appe_9.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+
+      // BURGERS
+      {
+        name: "X-Tudo Duplo Frango",
+        price: 2990,
+        category_id: 2,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/burger_1.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "X-Bacon com Ovo",
+        price: 3590,
+        category_id: 2,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/burger_2.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Duplo X-Salada Picante",
+        price: 3490,
+        category_id: 2,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/burger_3.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+
+      // DRINKS
+      {
+        name: "Refrigerantes",
+        price: 590,
+        category_id: 3,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/drink_1.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Água com Gás",
+        price: 490,
+        category_id: 3,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/drink_2.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Sucos Naturais",
+        price: 1190,
+        category_id: 3,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/drink_3.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+
+      // DESSERTS
+      {
+        name: "Bolos",
+        price: 1590,
+        category_id: 4,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/dessert_1.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Sorvetes",
+        price: 1690,
+        category_id: 4,
+        offer: false,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/dessert_2.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        name: "Pudins",
+        price: 1290,
+        category_id: 4,
+        offer: true,
+        path: "https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/dessert_3.png",
+        created_at: new Date(),
+        updated_at: new Date(),
+      }
+    ]);
+  },
+
+  async down(queryInterface) {
+    await queryInterface.bulkDelete('products', null, {});
+  }
+};
