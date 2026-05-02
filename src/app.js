@@ -8,7 +8,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://https://dev-burguer-mauve.vercel.app/", // 👈 troque pelo seu domínio real na Vercel
+  "https://dev-burguer-mauve.vercel.app", // ✅ URL real da Vercel
 ];
  
 app.use(
