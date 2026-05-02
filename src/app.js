@@ -4,11 +4,11 @@ import cors from 'cors';
  
 const app = express();
  
-// ✅ CORS: aceita localhost (dev) e Vercel (produção)
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://dev-burguer-2026.vercel.app/", // ✅ URL real da Vercel
+  "https://dev-burguer-mauve.vercel.app", // URL antiga
+  "https://dev-burguer-2026.vercel.app",  // ✅ URL nova
 ];
  
 app.use(
