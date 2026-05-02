@@ -146,7 +146,7 @@ module.exports = {
     price: 1190,
     category_id: 3,
     offer: true,
-    file: 'https://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/drink_3.png',
+    file: 'hhttps://qcvwqunbgjfxrtmmrxct.supabase.co/storage/v1/object/public/products/drink_3.png',
   },
   {
     name: "Café Espresso",
