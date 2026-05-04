@@ -21,7 +21,7 @@ class Product extends Model {
       }
     );
 
-    return this; // 🔥 ESSENCIAL
+    return this; 
   }
 
   static associate(models) {

@@ -16,16 +16,14 @@ class CategoryController {
       });
     }
  
-    // ✅ Garante que req.file existe antes de prosseguir
+    
     if (!req.file) {
       return res.status(400).json({ error: "Image is required!" });
     }
  
     const { name } = req.body;
  
-    // ✅ Usa a URL pública gerada pelo Supabase (vem em req.file.path ou req.file.location
-    //    dependendo do storage driver do multer que você usa)
-    //    Se estiver usando multer-storage-supabase ou similar, ajuste aqui:
+   
     const path = req.file.path || req.file.location || req.file.filename;
  
     const existingCategory = await Category.findOne({
@@ -38,7 +36,7 @@ class CategoryController {
  
     const newCategory = await Category.create({
       name,
-      path, // ✅ salva a URL correta
+      path, 
     });
  
     return res.status(201).json(newCategory);
@@ -64,7 +62,7 @@ class CategoryController {
     let path;
  
     if (req.file) {
-      // ✅ Mesmo ajuste no update
+      
       path = req.file.path || req.file.location || req.file.filename;
     }
  

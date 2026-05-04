@@ -7,14 +7,14 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://dev-burguer-mauve.vercel.app", // URL antiga
-  "https://dev-burguer-2026.vercel.app",  // ✅ URL nova
+  "https://dev-burguer-mauve.vercel.app", 
+  "https://dev-burguer-2026.vercel.app",  
 ];
  
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Permite requests sem origin (ex: Postman, curl, server-to-server)
+     
       if (!origin) return callback(null, true);
  
       if (allowedOrigins.includes(origin)) {

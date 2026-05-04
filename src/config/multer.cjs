@@ -6,9 +6,9 @@ module.exports = {
     storage: multer.diskStorage({
         destination: resolve(__dirname, "..", "..", "uploads"),
         filename: (req, file, callback) => {
-            // Pega a extensão do arquivo original
-            const ext = extname(file.originalname); // ex: ".png" ou ".jpg"
-            // Cria um nome único
+            
+            const ext = extname(file.originalname); 
+            
             const uniqueName = `${v4()}${ext}`;
             return callback(null, uniqueName);
         }

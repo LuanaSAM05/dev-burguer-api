@@ -21,18 +21,17 @@ class Database {
       },
     });
 
-    // 🔌 TESTE DE CONEXÃO COM BANCO
+    
     this.connection
       .authenticate()
       .then(() => console.log("DB conectado ✔"))
       .catch((err) => console.log("DB erro ❌", err));
 
-    // 🔧 inicializa models
     models.forEach((model) => {
       model.init(this.connection);
     });
 
-    // 🔗 associações
+    
     models.forEach((model) => {
       if (typeof model.associate === "function") {
         model.associate(this.connection.models);

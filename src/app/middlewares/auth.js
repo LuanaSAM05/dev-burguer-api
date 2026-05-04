@@ -3,7 +3,7 @@ import authConfig from '../../config/auth.js';
 
 const authMiddleware = (req, res, next) => {
 
-  // 🔥 libera preflight do CORS
+  
   if (req.method === "OPTIONS") {
     return res.sendStatus(204);
   }
