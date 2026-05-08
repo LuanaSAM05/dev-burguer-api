@@ -35,17 +35,17 @@ class CreatePaymentIntentController {
     }
 
     const { products } = req.body;
-
     const amount = calculatedOrderAmount(products);
 
     try {
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: amount, // 💰 valor em centavos
+        amount: amount,
         currency: 'brl',
-
-        // 🔥 CORREÇÃO PRINCIPAL (OBRIGATÓRIO)
-        payment_method_types: ['card', 'pix'],
-
+        // 🔥 CORREÇÃO: modo automático — o Stripe decide os métodos disponíveis
+        // baseado na sua conta, sem forçar manualmente card + pix
+        automatic_payment_methods: {
+          enabled: true,
+        },
       });
 
       return res.json({
@@ -61,4 +61,4 @@ class CreatePaymentIntentController {
   }
 }
 
-export default new CreatePaymentIntentController();
+export default new CreatePaymentIntentController();gi
