@@ -61,4 +61,4 @@ class CreatePaymentIntentController {
   }
 }
 
-export default new CreatePaymentIntentController();gi
+export default new CreatePaymentIntentController();
