@@ -21,13 +21,15 @@ class ProductController {
     }
 
     const { name, price, category_id, offer } = req.body;
-    const { filename } = req.file;
+
+    // Cloudinary retorna a URL em req.file.path
+    const path = req.file.path;
 
     const newProduct = await Product.create({
       name,
       price,
       category_id,
-      path: filename,
+      path,
       offer,
     });
 
@@ -56,7 +58,8 @@ class ProductController {
 
     let path;
     if (req.file) {
-      path = req.file.filename;
+      // Cloudinary retorna a URL em req.file.path
+      path = req.file.path;
     }
 
     await Product.update(
