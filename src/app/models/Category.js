@@ -6,7 +6,7 @@ class Category extends Model {
       {
         name: Sequelize.STRING,
         path: Sequelize.STRING,
-                url: {
+        url: {
           type: Sequelize.VIRTUAL,
           get() {
             return this.path;
@@ -16,6 +16,8 @@ class Category extends Model {
       {
         sequelize,
         tableName: "categories",
+        timestamps: true,
+        underscored: true,
       }
     );
 

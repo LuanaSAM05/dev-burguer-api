@@ -18,10 +18,12 @@ class Product extends Model {
       {
         sequelize,
         tableName: "products",
+        timestamps: true,
+        underscored: true,
       }
     );
 
-    return this; 
+    return this;
   }
 
   static associate(models) {
